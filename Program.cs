@@ -7,26 +7,50 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 Console.Clear();
-// создаем массив
-string[] arr = new string[] { "Yes", "No!", "45643", "()))d", "Uhh!", "But no", "Great", "73457", "brain!", "Geek" };
+// создаем исходный массив
+string[] arr = new string[] { "Yes", "No!", "45643", "()))d", "Uhh!", "But", "Great", "73457", "brain!", "Gee" };
+
+// создаем новый массив с той же длиной
+string[] outarr = new string[10];
+
+int n = 0;// ставим номер нового массива 
 
 string[] NewGenArr (string []arr)
 {
-    string[] outarr = new string[10];
+    
     for (int i=0; i<arr.Length; i++)
     {
         if (arr[i].Length<=3)
         {
-            outarr[i] = arr[i];
-        }
-        else
-        {
-            outarr[i] = "";
+            Random r = new Random();
+            if(r.Next(1,100) < 50)
+           
+            {            
+                outarr[n] = arr[i];
+                n++;
+            }
+            else
+            {
+                outarr[i] = "";
+            }
         }
 
     }
     return outarr;
 }
 
+//Метод печати одномерного массива
+void Print1Darray(string []arr)
+{
+    Console.Write("[");
+    for(int i = 0; i<arr.Length-1; i++)
+    {
+        Console.Write(arr[i]+",");
+    }
+    Console.WriteLine(arr[arr.Length-1] + "]");
+}
+
+
 NewGenArr (arr);
-Console.WriteLine(arr.Length);
+Print1Darray(arr);
+Print1Darray(outarr);
