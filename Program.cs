@@ -11,7 +11,7 @@ Console.Clear();
 string[] arr = new string[] { "Yes", "No!", "45643", "()))d", "Uhh!", "But", "Great", "73457", "brain!", "Gee" };
 
 // создаем новый массив с той же длиной
-string[] outarr = new string[10];
+string[] outarr = new string[arr.Length];
 
 int n = 0;// ставим первый номер элемента нового массива 
 
