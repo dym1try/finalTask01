@@ -13,12 +13,11 @@ string[] arr = new string[] { "Yes", "No!", "45643", "()))d", "Uhh!", "But", "Gr
 // создаем новый массив с той же длиной
 string[] outarr = new string[10];
 
-int n = 0;// ставим номер нового массива 
+int n = 0;// ставим первый номер элемента нового массива 
 
-string[] NewGenArr (string []arr)
-{
-    
-    for (int i=0; i<arr.Length; i++)
+string[] NewGenArr (string []arr)// создаем метод создания нового массива
+{    
+    for (int i=0; i<arr.Length; i++)// проходим массив по каждому элементу
     {
         if (arr[i].Length<=3)
         {
@@ -36,6 +35,7 @@ string[] NewGenArr (string []arr)
         }
 
     }
+    Array.Resize(ref outarr, n);
     return outarr;
 }
 
