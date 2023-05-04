@@ -19,13 +19,13 @@ string[] NewGenArr (string []arr)// создаем метод создания �
 {    
     for (int i=0; i<arr.Length; i++)// проходим массив по каждому элементу
     {
-        if (arr[i].Length<=3)
+        if (arr[i].Length<=3)// проверяем длину элемента
         {
-            Random r = new Random();
+            Random r = new Random();// добавляем рандом 50%
             if(r.Next(1,100) < 50)
            
             {            
-                outarr[n] = arr[i];
+                outarr[n] = arr[i];// заполняем значениями новый массив
                 n++;
             }
             else
@@ -35,7 +35,7 @@ string[] NewGenArr (string []arr)// создаем метод создания �
         }
 
     }
-    Array.Resize(ref outarr, n);
+    Array.Resize(ref outarr, n);// укорачиваем новый массив до нужной длины
     return outarr;
 }
 
@@ -49,8 +49,6 @@ void Print1Darray(string []arr)
     }
     Console.WriteLine(arr[arr.Length-1] + "]");
 }
-
-
 NewGenArr (arr);
-Print1Darray(arr);
-Print1Darray(outarr);
+Print1Darray(arr);// печатаем старый массив
+Print1Darray(outarr);// печатаем новый массив
